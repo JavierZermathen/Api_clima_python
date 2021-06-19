@@ -34,13 +34,17 @@ while ( user == 1 or user== 2 ):
 
         clima = get_weather_city(url,params)
 
-        print (clima["main"],clima["name"])
+       
+        clima2 = (clima["main"])
 
+        print ("El clima de la ciudad de",clima["name"],"es: " )
+        clima2_ordenado = sorted(clima2.items()) 
+        print(clima2_ordenado)
 
     # pronostico de ahora porlat lon  
     elif user == 2 and pronostico == 3:
         lat= input("Ingresar la latitud: ")
-        lon=  input("Ingresar la longitud: ")
+        lon= input("Ingresar la longitud: ")
         params  = {}
         params["lat"] = lat
         params["lon"] = lon
@@ -51,9 +55,11 @@ while ( user == 1 or user== 2 ):
 
         clima = get_weather_city(url_coordenadas,params)
 
-        print (clima["main"],clima["name"])
+        clima2 = (clima["main"])
 
-
+        print ("El clima de la ciudad de",clima["name"],"es: " )
+        clima2_ordenado = sorted(clima2.items()) 
+        print(clima2_ordenado)
 
     # ver pronostico 4 dias ciudad
     if user == 1 and pronostico == 4:
