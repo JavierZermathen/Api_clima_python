@@ -6,5 +6,8 @@ def get_weather_city(ruta,parametros):
     if req.status_code == 200:
         dic = req.json()
         return dic
+   
+        
+
 
 
