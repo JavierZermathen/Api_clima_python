@@ -7,23 +7,23 @@ print("BIENENIDO A LA APP DE CLIMA")
 
 print("Ingresar 1 para buscar por ciudad ")
 print("Ingresar 2 para buscar por lat y long")
-print("Ingresar 8 para salir")  
+print("Ingresar un valor distinto para salir")  
 print()
 
-user = int(input("Porfavor, Ingrese su opcion:" )) 
+user = input("Porfavor, Ingrese su opcion:" )
 
 
-while ( user == 1 or user== 2 ):
+while ( user == "1" or user== "2" ):
 
     print("Ingresar 3 para ver pronostico de ahora")
-    print("Ingresar 4 para ver pronostico dentro de 4 dias")
+    print("Ingresar 4 para ver pronostico dentro de 5 dias")
     
     print()
-    pronostico = int( input ("Porfavor, Ingrese su opcion:"))   
+    pronostico =  input ("Porfavor, Ingrese su opcion:")   
 
 
     # pronostico de ahora por ciudad
-    if user == 1 and pronostico == 3:
+    if user == "1" and pronostico == "3":
         city = input("Ingresar una ciudad: ")
         params  = {}
         params["q"] = city
@@ -42,7 +42,7 @@ while ( user == 1 or user== 2 ):
         print(clima2_ordenado)
 
     # pronostico de ahora porlat lon  
-    elif user == 2 and pronostico == 3:
+    elif user == "2" and pronostico == "3":
         lat= input("Ingresar la latitud: ")
         lon= input("Ingresar la longitud: ")
         params  = {}
@@ -62,8 +62,8 @@ while ( user == 1 or user== 2 ):
         print(clima2_ordenado)
 
     # ver pronostico 4 dias ciudad
-    if user == 1 and pronostico == 4:
-        city = input("Ingresar una ciudad para pronostico de 4 dias: ")
+    if user == "1" and pronostico == "4":
+        city = input("Ingresar una ciudad para pronostico de 5 dias: ")
         params  = {}
         params["q"] = city
         params["appid"] = "a819530cf94d3ae1253831c55d4217af"
@@ -75,41 +75,45 @@ while ( user == 1 or user== 2 ):
         clima = get_weather_city(url,params)
 
         print()
-       
+
         fecha = clima["list"][1]["dt_txt"]
         datos = clima["list"][1]
-
-        print("El tiempo para el dia",fecha, "es de: ")
+        
+        print("El tiempo para",city, "en el dia",fecha, "es de: ")
         print (datos)
 
-        fecha = clima["list"][6]["dt_txt"]
-        datos = clima["list"][6]
-        print()
-        print("El tiempo para el dia",fecha, "es de: ")
-        print (datos)
 
         fecha = clima["list"][13]["dt_txt"]
         datos = clima["list"][13]
         print()
-        print("El tiempo para el dia",fecha, "es de: ")
+        
+        print("El tiempo para",city, "en el dia",fecha, "es de: ")
         print (datos)
 
         fecha = clima["list"][20]["dt_txt"]
         datos = clima["list"][20]
         print()
-        print("El tiempo para el dia",fecha, "es de: ")
+       
+        print("El tiempo para",city, "en el dia",fecha, "es de: ")
         print (datos)
 
         fecha = clima["list"][27]["dt_txt"]
         datos = clima["list"][27]
         print()
-        print("El tiempo para el dia",fecha, "es de: ")
+        
+        print("El tiempo para",city, "en el dia",fecha, "es de: ")
         print (datos)
        
+        fecha = clima["list"][35]["dt_txt"]
+        datos = clima["list"][35]
+        print()
+       
+        print("El tiempo para",city, "en el dia",fecha, "es de: ")
+        print (datos)
 
 
     # ver pronostico 4 dias por lat lon
-    elif user == 2 and pronostico == 4:
+    elif user == "2" and pronostico == "4":
         lat= input("Ingresar la latitud: ")
         lon=  input("Ingresar la longitud: ")
         params  = {}
@@ -127,41 +131,41 @@ while ( user == 1 or user== 2 ):
         fecha = clima["list"][1]["dt_txt"]
         datos = clima["list"][1]
 
-        print("El tiempo para el dia",fecha, "es de: ")
+        print("El tiempo para la latitud",lat,"y la longitud",lon,"en el dia",fecha, "es de: ")
         print (datos)
 
-        fecha = clima["list"][6]["dt_txt"]
-        datos = clima["list"][6]
-        print()
-        print("El tiempo para el dia",fecha, "es de: ")
-        print (datos)
 
         fecha = clima["list"][13]["dt_txt"]
         datos = clima["list"][13]
         print()
-        print("El tiempo para el dia",fecha, "es de: ")
+        print("El tiempo para la latitud",lat,"y la longitud",lon,"en el dia",fecha, "es de: ")
         print (datos)
 
         fecha = clima["list"][20]["dt_txt"]
         datos = clima["list"][20]
         print()
-        print("El tiempo para el dia",fecha, "es de: ")
+        print("El tiempo para la latitud",lat,"y la longitud",lon,"en el dia",fecha, "es de: ")
         print (datos)
 
         fecha = clima["list"][27]["dt_txt"]
         datos = clima["list"][27]
         print()
-        print("El tiempo para el dia",fecha, "es de: ")
+        print("El tiempo para la latitud",lat,"y la longitud",lon, "en el dia",fecha, "es de: ")
         print (datos)
 
+        fecha = clima["list"][35]["dt_txt"]
+        datos = clima["list"][35]
+        print()
+        print("El tiempo para la latitud",lat,"y la longitud",lon,"en el dia",fecha, "es de: ")
+        print (datos)
 
     print()
     print("Ingresar 1 para buscar por ciudad ")
     print("Ingresar 2 para buscar por lat y long")
-    print("Ingresar 8 para salir")  
+    print("Ingresar un valor distinto para salir") 
     
     print()
 
-    user = int(input("Porfavor, Ingrese su opcion:" )) 
+    user = input("Porfavor, Ingrese su opcion:" )
 
 print("Gracias por usar nuestra app")
