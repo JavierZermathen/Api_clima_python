@@ -38,7 +38,7 @@ while ( user == "1" or user== "2" ):
         clima2 = (clima["main"])
 
         print ("El clima de la ciudad de",clima["name"],"es: " )
-        clima2_ordenado = sorted(clima2.items()) 
+        # clima2_ordenado = sorted(clima2.items()) 
         
         for i in clima2:
             print(i, ":",clima2[i])
@@ -62,8 +62,9 @@ while ( user == "1" or user== "2" ):
         clima2 = (clima["main"])
 
         print ("El clima de la ciudad de",clima["name"],"es: " )
-        clima2_ordenado = sorted(clima2.items()) 
-        print(clima2_ordenado)
+        for i in clima2:
+            print(i, ":",clima2[i])
+        
 
     # ver pronostico 4 dias ciudad
     if user == "1" and pronostico == "4":
@@ -81,39 +82,44 @@ while ( user == "1" or user== "2" ):
         print()
 
         fecha = clima["list"][1]["dt_txt"]
-        datos = clima["list"][1]
-        
+        # datos = clima["list"][1]["cloud"]   swind visibility rain
+        datos = clima["list"][1]["main"]
         print("El tiempo para",city, "en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
 
 
         fecha = clima["list"][13]["dt_txt"]
-        datos = clima["list"][13]
+        datos = clima["list"][13]["main"]
         print()
-        
         print("El tiempo para",city, "en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
+
+
 
         fecha = clima["list"][20]["dt_txt"]
-        datos = clima["list"][20]
+        datos = clima["list"][20]["main"]
         print()
-       
         print("El tiempo para",city, "en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
+
 
         fecha = clima["list"][27]["dt_txt"]
-        datos = clima["list"][27]
+        datos = clima["list"][27]["main"]
         print()
-        
         print("El tiempo para",city, "en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
        
+
         fecha = clima["list"][35]["dt_txt"]
-        datos = clima["list"][35]
+        datos = clima["list"][35]["main"]
         print()
-       
         print("El tiempo para",city, "en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
 
 
     # ver pronostico 4 dias por lat lon
@@ -133,35 +139,40 @@ while ( user == "1" or user== "2" ):
         print()
        
         fecha = clima["list"][1]["dt_txt"]
-        datos = clima["list"][1]
+        datos = clima["list"][1]["main"]
 
         print("El tiempo para la latitud",lat,"y la longitud",lon,"en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
 
 
         fecha = clima["list"][13]["dt_txt"]
-        datos = clima["list"][13]
+        datos = clima["list"][13]["main"]
         print()
         print("El tiempo para la latitud",lat,"y la longitud",lon,"en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
 
         fecha = clima["list"][20]["dt_txt"]
-        datos = clima["list"][20]
+        datos = clima["list"][20]["main"]
         print()
         print("El tiempo para la latitud",lat,"y la longitud",lon,"en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
 
         fecha = clima["list"][27]["dt_txt"]
-        datos = clima["list"][27]
+        datos = clima["list"][27]["main"]
         print()
         print("El tiempo para la latitud",lat,"y la longitud",lon, "en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
 
         fecha = clima["list"][35]["dt_txt"]
-        datos = clima["list"][35]
+        datos = clima["list"][35]["main"]
         print()
         print("El tiempo para la latitud",lat,"y la longitud",lon,"en el dia",fecha, "es de: ")
-        print (datos)
+        for i in datos:
+            print(i, ":",datos[i])
 
     print()
     print("Ingresar 1 para buscar por ciudad ")
