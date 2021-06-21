@@ -39,7 +39,11 @@ while ( user == "1" or user== "2" ):
 
         print ("El clima de la ciudad de",clima["name"],"es: " )
         clima2_ordenado = sorted(clima2.items()) 
-        print(clima2_ordenado)
+        
+        for i in clima2:
+            print(i, ":",clima2[i])
+
+
 
     # pronostico de ahora porlat lon  
     elif user == "2" and pronostico == "3":
