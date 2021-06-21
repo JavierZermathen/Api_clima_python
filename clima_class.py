@@ -5,3 +5,4 @@ class Clima(object):
 
     def __init__ (self,main,visibility,wind,clouds):
         self.main = main
+#falta intentar hacerlo con class
